@@ -4,107 +4,266 @@
 
 ### *Learn by Thinking, Not Copying.*
 
-An AI-powered educational chatbot built on the **"Human First, AI Next"** philosophy.  
-Powered by **Groq**, **Next.js 16**, **Vercel AI SDK**, and in-memory **RAG**.
+An AI-native educational platform using Socratic tutoring, Groq-powered LLMs, generative UI, and in-memory RAG for interactive learning.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=nextdotjs"/>
+  <img src="https://img.shields.io/badge/Groq-LLM-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/RAG-In--Memory-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AI-Education-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-red?style=for-the-badge"/>
+</p>
 
 </div>
 
 ---
 
-## 🎯 What is Cypher Lite?
+# 🎯 What is Cypher Lite?
 
-Cypher Lite is an AI EdTech MVP that acts as a Socratic tutor — guiding students toward understanding instead of simply giving answers. Unlike generic AI assistants, Cypher Lite:
+Cypher Lite is an AI-powered educational chatbot built around the philosophy:
 
-- 🧠 **Asks questions back** — "What do you think happens next?"
-- 📝 **Breaks problems down** — step-by-step guidance
-- 💡 **Uses analogies** — makes complex concepts relatable
-- 🎯 **Checks understanding** — reflective follow-ups
-- 🔒 **Refuses to spoon-feed** — encourages critical thinking
+> **"Human First, AI Next."**
+
+Instead of simply giving answers, Cypher Lite acts like a Socratic tutor that helps students think critically and understand concepts deeply.
+
+Unlike generic AI assistants, Cypher Lite:
+
+- 🧠 Asks reflective questions back
+- 📝 Breaks concepts into understandable steps
+- 💡 Uses analogies for deeper understanding
+- 🎯 Encourages active learning
+- 🔒 Avoids spoon-feeding direct solutions
 
 ---
 
-## ✨ Features
+# ✨ Core Features
 
-| Feature | Description |
+## 🧠 Socratic AI Tutor
+Guides students toward understanding rather than directly providing answers.
+
+---
+
+## 📚 In-Memory RAG System
+Upload PDFs or TXT files and chat with your study material using lightweight TF-IDF retrieval.
+
+---
+
+## 🎨 Generative UI Components
+AI responses dynamically generate:
+- Interactive quizzes
+- Flashcards
+- Summaries
+- Educational UI blocks
+
+---
+
+## ⚡ Ultra-Fast LLM Inference
+Powered by Groq for real-time low-latency AI interactions.
+
+---
+
+## 📄 File Upload & Contextual Learning
+Students can upload learning materials and receive context-aware tutoring assistance.
+
+---
+
+## 🌙 Modern AI Chat Experience
+Clean AI-native interface built using:
+- Next.js
+- Tailwind CSS
+- Framer Motion
+- Vercel AI SDK
+
+---
+
+# 🏗️ Architecture
+
+```bash
+cypher-lite/
+├── src/
+│   ├── app/              # App Router + API routes
+│   ├── components/       # Chat UI & generative components
+│   ├── lib/              # Groq client + RAG pipeline
+│   ├── hooks/            # Streaming & chat hooks
+│   ├── utils/            # Parsers & helper utilities
+│   └── types/            # TypeScript types
+```
+
+---
+
+# 🧠 RAG Pipeline
+
+```text
+Upload PDF/TXT
+      ↓
+Extract Text
+      ↓
+Chunk Documents
+      ↓
+TF-IDF Similarity Search
+      ↓
+Inject Context into Prompt
+      ↓
+Groq LLM Response
+      ↓
+Stream AI Output
+```
+
+---
+
+# 🎨 Generative UI Workflow
+
+```text
+AI Response
+      ↓
+Structured Output Parsing
+      ↓
+Generate Quiz / Flashcards / Summaries
+      ↓
+Render Interactive Components
+```
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
 |---|---|
-| 🤖 **Teaching Mode** | Socratic AI tutor — guides, doesn't just answer |
-| 🖼️ **Vision AI** | Upload homework photos, diagrams, handwritten notes |
-| 📄 **Smart RAG** | Upload PDFs/text, ask questions about your own materials |
-| ❓ **Quiz Generator** | Interactive multiple-choice quizzes with scoring |
-| 📚 **Flashcard Deck** | 3D flip flashcards with shuffle and navigation |
-| 📋 **Summarizer** | Condense topics into clear summaries |
-| ✨ **Simplify Mode** | Re-explain complex concepts in simple language |
-| 💬 **Streaming Chat** | Real-time token streaming from Groq |
-| 🌑 **Dark Futuristic UI** | Glassmorphism, gradients, animations |
-| 📱 **Responsive** | Works on desktop and mobile |
+| Next.js | Frontend + API Routes |
+| TypeScript | Type-safe development |
+| Tailwind CSS | UI styling |
+| Groq SDK | Ultra-fast LLM inference |
+| Vercel AI SDK | AI streaming |
+| Framer Motion | Animations |
+| pdf-parse | PDF extraction |
+| TF-IDF | Lightweight RAG retrieval |
 
 ---
 
-## 🏗️ Architecture
+# 🚀 Quick Start
 
-- **Frontend**: Next.js 16 App Router, Tailwind CSS v4, Framer Motion
-- **AI Model**: `meta-llama/llama-4-scout-17b-16e-instruct` via Groq
-- **RAG System**: In-memory TF-IDF vector similarity for fast PDF/TXT indexing
-- **Generative UI**: AI responses parsed for structured JSON markers (e.g. `[QUIZ]...[/QUIZ]`) rendered directly into interactive UI components
-
----
-
-## 🚀 Quick Start
-
-### 1. Clone & Install
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/amitbaghel001/Cypher-Lite.git
 cd Cypher-Lite
+```
+
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
 npm install
 ```
 
-### 2. Set Up Environment Variables
+---
 
-```bash
-cp .env.example .env.local
-```
+## 3️⃣ Create Environment Variables
 
-Edit `.env.local` and add your Groq API key:
+Create a `.env.local` file:
 
 ```env
-GROQ_API_KEY=your_groq_api_key_here
+GROQ_API_KEY=your_api_key_here
 ```
 
-> Get your free API key at [console.groq.com/keys](https://console.groq.com/keys)
+---
 
-### 3. Run Development Server
+## 4️⃣ Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open:
 
----
-
-## 🌐 Deploy to Vercel
-
-```bash
-npm install -g vercel
-vercel --prod
+```text
+http://localhost:3000
 ```
 
-When prompted, add your environment variable `GROQ_API_KEY`.
+---
+
+# 🔑 Getting a Groq API Key
+
+1. Visit:
+```text
+https://console.groq.com
+```
+
+2. Create an account
+
+3. Generate an API key
+
+4. Add it to `.env.local`
 
 ---
 
-## 🧰 Tech Stack
+# 🛠️ How Tool Actions Work
 
-- **Next.js 16** (App Router, API Routes)
-- **TypeScript**
-- **Tailwind CSS v4**
-- **Groq SDK**
-- **Framer Motion** & **Lucide React**
-- **pdf-parse v1.1.1** (Server-side PDF text extraction)
+Tool buttons such as:
+- Quiz
+- Flashcards
+- Summarize
+- Simplify
+
+send structured prompts to the LLM.
+
+The AI responds with structured markers like:
+
+```text
+[QUIZ]...[/QUIZ]
+```
+
+which are parsed into interactive UI components dynamically.
 
 ---
 
-## 📄 License
+# 🌟 Why This Project Matters
 
-MIT License — free to use, modify, and deploy.
+Most AI tutors simply provide answers.
+
+Cypher Lite focuses on:
+- active learning
+- conceptual understanding
+- guided reasoning
+- educational interaction
+
+making AI feel more like a mentor than a search engine.
+
+---
+
+# 🔮 Future Improvements
+
+- Authentication & user accounts
+- Persistent chat memory
+- Voice-based tutoring
+- Multilingual support
+- Personalized learning analytics
+- Collaborative study rooms
+- Vector database integration
+- Agentic tutoring workflows
+
+---
+
+# 👨‍💻 Author
+
+## Amit Baghel
+
+AI/ML Developer passionate about:
+- Generative AI
+- Educational AI
+- AI Product Engineering
+- Intelligent Learning Systems
+
+- GitHub: https://github.com/amitbaghel001
+- LinkedIn: https://linkedin.com/in/amit0baghel
+
+---
+
+<div align="center">
+
+### ⭐ Built for learners who think, not copy.
+
+*Generative AI · RAG · Educational AI · Groq · Next.js · AI Tutoring*
+
+</div>
